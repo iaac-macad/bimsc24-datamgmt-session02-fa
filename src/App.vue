@@ -1,6 +1,15 @@
+
+
 <!-- the script is where the js code goes -->
 <script setup>
 import { ref } from "vue" // you need this to use ref()
+
+
+let count = ref(0);
+
+function increment() {
+    count.value++;
+}
 
 
 </script>
@@ -9,18 +18,24 @@ import { ref } from "vue" // you need this to use ref()
 
 <!-- the template is where the html code goes -->
 <template>
-  <div id="navbar" class="container">  
-        <div id="title">My Personal website</div>
-        
-        
 
+<div id="navbar" class="container">  
+        <div id="title">This page is created by  </div>
     </div>
+
+
+
 
     <div id="flex">
 
         <div id="sidebar" class="container"> Sidebar </div>
 
-        <div id="main" class="container"> Main </div>
+        <div id="main" class="container">  
+        <button @click="increment">Add one more</button>
+        <p style="margin-left: 8px">Count is: {{ count }}</p>
+    </div>
+
+
     </div>
 
 
@@ -34,7 +49,7 @@ import { ref } from "vue" // you need this to use ref()
 html{
     
     background-color: rgb(59, 59, 59); 
-    color: white;
+    color: rgb(97, 40, 40);
 }
 
 body{
